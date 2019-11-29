@@ -1,0 +1,36 @@
+E:\New folder\project\imageOperations\imageOperations\bin\Debug\imageOperations.exe.config
+E:\New folder\project\imageOperations\imageOperations\bin\Debug\imageOperations.exe
+E:\New folder\project\imageOperations\imageOperations\bin\Debug\imageOperations.pdb
+E:\New folder\project\imageOperations\imageOperations\obj\Debug\imageOperations.csprojAssemblyReference.cache
+E:\New folder\project\imageOperations\imageOperations\obj\Debug\imageOperations.Form1.resources
+E:\New folder\project\imageOperations\imageOperations\obj\Debug\imageOperations.Properties.Resources.resources
+E:\New folder\project\imageOperations\imageOperations\obj\Debug\imageOperations.csproj.GenerateResource.cache
+E:\New folder\project\imageOperations\imageOperations\obj\Debug\imageOperations.exe
+E:\New folder\project\imageOperations\imageOperations\obj\Debug\imageOperations.pdb
+C:\Users\batuh\Documents\GitHub\imageOperations_V2\imageOperations\bin\Debug\imageOperations.exe.config
+C:\Users\batuh\Documents\GitHub\imageOperations_V2\imageOperations\bin\Debug\imageOperations.exe
+C:\Users\batuh\Documents\GitHub\imageOperations_V2\imageOperations\bin\Debug\imageOperations.pdb
+C:\Users\batuh\Documents\GitHub\imageOperations_V2\imageOperations\obj\Debug\imageOperations.csprojAssemblyReference.cache
+C:\Users\batuh\Documents\GitHub\imageOperations_V2\imageOperations\obj\Debug\imageOperations.Form1.resources
+C:\Users\batuh\Documents\GitHub\imageOperations_V2\imageOperations\obj\Debug\imageOperations.Properties.Resources.resources
+C:\Users\batuh\Documents\GitHub\imageOperations_V2\imageOperations\obj\Debug\imageOperations.csproj.GenerateResource.cache
+C:\Users\batuh\Documents\GitHub\imageOperations_V2\imageOperations\obj\Debug\imageOperations.exe
+C:\Users\batuh\Documents\GitHub\imageOperations_V2\imageOperations\obj\Debug\imageOperations.pdb
+C:\Users\batuh\Documents\GitHub\BorderDetectionImageProcessing\imageOperations\obj\Debug\imageOperations.csprojAssemblyReference.cache
+C:\Users\batuh\Documents\GitHub\BorderDetectionImageProcessing\imageOperations\obj\Debug\imageOperations.Form1.resources
+C:\Users\batuh\Documents\GitHub\BorderDetectionImageProcessing\imageOperations\obj\Debug\imageOperations.Properties.Resources.resources
+C:\Users\batuh\Documents\GitHub\BorderDetectionImageProcessing\imageOperations\obj\Debug\imageOperations.csproj.GenerateResource.cache
+C:\Users\batuh\Documents\GitHub\BorderDetectionImageProcessing\imageOperations\obj\Debug\imageOperations.exe
+C:\Users\batuh\Documents\GitHub\BorderDetectionImageProcessing\imageOperations\obj\Debug\imageOperations.pdb
+C:\Users\batuh\Documents\GitHub\BorderDetectionImageProcessing\imageOperations\bin\Debug\imageOperations.exe.config
+C:\Users\batuh\Documents\GitHub\BorderDetectionImageProcessing\imageOperations\bin\Debug\imageOperations.exe
+C:\Users\batuh\Documents\GitHub\BorderDetectionImageProcessing\imageOperations\bin\Debug\imageOperations.pdb
+C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\obj\Debug\imageOperations.csprojAssemblyReference.cache
+C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\obj\Debug\imageOperations.Form1.resources
+C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\obj\Debug\imageOperations.Properties.Resources.resources
+C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\obj\Debug\imageOperations.csproj.GenerateResource.cache
+C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\obj\Debug\imageOperations.exe
+C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\obj\Debug\imageOperations.pdb
+C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\bin\Debug\imageOperations.exe.config
+C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\bin\Debug\imageOperations.exe
+C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\bin\Debug\imageOperations.pdb
