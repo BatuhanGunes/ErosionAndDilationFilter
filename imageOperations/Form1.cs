@@ -105,7 +105,6 @@ namespace imageOperations
             }       
         }
 
-
         private void buttonReset_Click(object sender, EventArgs e)
         {
             if (bmp != null)
@@ -118,12 +117,64 @@ namespace imageOperations
 
         private void buttonPikselPos_Click(object sender, EventArgs e)
         {
+            if (bmp != null)
+            {
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+                        Color c = bmp.GetPixel(x, y);
 
+                        int r = c.R;
+                        int g = c.G;
+                        int b = c.B;
+
+                        if (r <= 225) r += 30;
+                        else r = 255;
+
+                        if (g <= 225) g += 30;
+                        else g = 255;
+
+                        if (b <= 225) b += 30;
+                        else b = 255;
+
+                        bmp.SetPixel(x, y, Color.FromArgb(r, g, b));
+                    }
+                }
+                pictureBox.Image = bmp;
+                this.Refresh();
+            }
         }
 
         private void buttonPikselNeg_Click(object sender, EventArgs e)
         {
+            if (bmp != null)
+            {
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+                        Color c = bmp.GetPixel(x, y);
 
+                        int r = c.R;
+                        int g = c.G;
+                        int b = c.B;
+
+                        if (r >= 30) r -= 30;
+                        else r = 0;
+
+                        if (g >= 30) g -= 30;
+                        else g = 0;
+
+                        if (b >= 30) b -= 30;
+                        else b = 0;
+                                        
+                        bmp.SetPixel(x, y, Color.FromArgb(r, g, b));
+                    }
+                }
+                pictureBox.Image = bmp;
+                this.Refresh();
+            }
         }
 
         private void buttonErosion_Click(object sender, EventArgs e)
