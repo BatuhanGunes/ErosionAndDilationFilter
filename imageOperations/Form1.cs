@@ -14,6 +14,7 @@ namespace imageOperations
     {
 
         Bitmap bmp = new Bitmap(800, 500);
+        Boolean flagBitmap = false;
 
         public Form1()
         {
@@ -100,6 +101,7 @@ namespace imageOperations
                         }
                     }
                 }
+                flagBitmap = true;
                 pictureBox.Image = bmp;
                 this.Refresh();
             }       
@@ -176,30 +178,274 @@ namespace imageOperations
                 this.Refresh();
             }
         }
+        
+        private void erosion()
+        {
+            int[,] bmpMatris = new int[bmp.Height, bmp.Width];
+            int b1, b2, b3, b4;
+            Color c;
+
+            for (int y = 1; y < bmp.Height - 1; y++)
+            {
+                for (int x = 1; x < bmp.Width - 1; x++)
+                {
+                    c = bmp.GetPixel(x, y);
+                    c = bmp.GetPixel(x - 1, y);
+                    b1 = c.R;
+                    c = bmp.GetPixel(x + 1, y);
+                    b2 = c.R;
+                    c = bmp.GetPixel(x, y - 1);
+                    b3 = c.R;
+                    c = bmp.GetPixel(x, y + 1);
+                    b4 = c.R;
+
+                    if (b1 == 255 && b2 == 255 && b3 == 255 && b4 == 255)
+                    {
+                        bmpMatris[y, x] = 255;
+                    }
+
+                    else
+                    {
+                        bmpMatris[y, x] = 0;
+                    }
+                }
+            }
+
+            for (int y = 1; y < bmp.Height - 1; y++)
+            {
+                for (int x = 1; x < bmp.Width - 1; x++)
+                {
+                    if (bmpMatris[y, x] == 255)
+                    {
+                        bmp.SetPixel(x, y, Color.FromArgb(255, 255, 255));
+                    }
+                    else bmp.SetPixel(x, y, Color.FromArgb(0, 0, 0));
+                }
+            }
+        }
+
+        private void dilation()
+        {
+            int[,] bmpMatris = new int[bmp.Height, bmp.Width];
+            int b1, b2, b3, b4;
+            Color c;
+
+            for (int y = 1; y < bmp.Height - 1; y++)
+            {
+                for (int x = 1; x < bmp.Width - 1; x++)
+                {
+                    c = bmp.GetPixel(x, y);
+                    c = bmp.GetPixel(x - 1, y);
+                    b1 = c.R;
+                    c = bmp.GetPixel(x + 1, y);
+                    b2 = c.R;
+                    c = bmp.GetPixel(x, y - 1);
+                    b3 = c.R;
+                    c = bmp.GetPixel(x, y + 1);
+                    b4 = c.R;
+
+                    if (b1 == 255 || b2 == 255 || b3 == 255 || b4 == 255)
+                    {
+                        bmpMatris[y, x] = 255;
+                    }
+
+                    else
+                    {
+                        bmpMatris[y, x] = 0;
+                    }
+                }
+            }
+
+            for (int y = 1; y < bmp.Height - 1; y++)
+            {
+                for (int x = 1; x < bmp.Width - 1; x++)
+                {
+                    if (bmpMatris[y, x] == 255)
+                    {
+                        bmp.SetPixel(x, y, Color.FromArgb(255, 255, 255));
+                    }
+                    else bmp.SetPixel(x, y, Color.FromArgb(0, 0, 0));
+                }
+            }
+        }
 
         private void buttonErosion_Click(object sender, EventArgs e)
         {
-
+            if (bmp != null)
+            {
+                if (flagBitmap == false)
+                {
+                    MessageBox.Show("Please click the bitmap button first");
+                }
+                else
+                {
+                    erosion();
+                    pictureBox.Image = bmp;
+                    this.Refresh();
+                }
+            }
         }
 
         private void buttonDilation_Click(object sender, EventArgs e)
         {
-
+            if (bmp != null)
+            {
+                if (flagBitmap == false)
+                {
+                    MessageBox.Show("Please click the bitmap button first");
+                }
+                else
+                {
+                    dilation();
+                    pictureBox.Image = bmp;
+                    this.Refresh();
+                }
+            }
         }
 
         private void buttonOpening_Click(object sender, EventArgs e)
         {
-
+            if (bmp != null)
+            {
+                if (flagBitmap == false)
+                {
+                    MessageBox.Show("Please click the bitmap button first");
+                }
+                else
+                {
+                    erosion();
+                    dilation();
+                    pictureBox.Image = bmp;
+                    this.Refresh();
+                }
+            }
         }
 
         private void buttonClosing_Click(object sender, EventArgs e)
         {
-
+            if (bmp != null)
+            {
+                if (flagBitmap == false)
+                {
+                    MessageBox.Show("Please click the bitmap button first");
+                }
+                else
+                {
+                    dilation();
+                    erosion();
+                    pictureBox.Image = bmp;
+                    this.Refresh();
+                }
+            }
         }
 
         private void buttonSymmetry_Click(object sender, EventArgs e)
         {
+            if (bmp != null)
+            {
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    for (int x = 0; x < bmp.Width/2; x++)
+                    {
+                        Color c = bmp.GetPixel(x, y);
+                        Color tmp = bmp.GetPixel(bmp.Width - x - 1, y);
+                        bmp.SetPixel(x, y, tmp);
+                        bmp.SetPixel(bmp.Width - x - 1, y, c);
+                    }
+                }
+                pictureBox.Image = bmp;
+                this.Refresh();
+            }
+        }
 
+        private void convulationAndLaplacian(int[,] filter)
+        {
+            Color c;
+            int convulation;
+            int[,] bmpMatris = new int[bmp.Height, bmp.Width];
+            
+            int b1, b2, b3, b4, b5, b6, b7, b8, b9;
+
+            for (int y = 1; y < bmp.Height - 2; y++)
+            {
+                for (int x = 1; x < bmp.Width - 2; x++)
+                {
+                        c = bmp.GetPixel(x - 1, y - 1);
+                        b1 = c.R;
+                        c = bmp.GetPixel(x, y - 1);
+                        b2 = c.R;
+                        c = bmp.GetPixel(x + 1, y - 1);
+                        b3 = c.R;
+                        c = bmp.GetPixel(x - 1, y);
+                        b4 = c.R;
+                        c = bmp.GetPixel(x + 1, y);
+                        b5 = c.R;
+                        c = bmp.GetPixel(x, y);
+                        b6 = c.R;
+                        c = bmp.GetPixel(x - 1, y + 1);
+                        b7 = c.R;
+                        c = bmp.GetPixel(x, y + 1);
+                        b8 = c.R;
+                        c = bmp.GetPixel(x + 1, y + 1);
+                        b9 = c.R;
+
+                        convulation = filter[0, 0] * b1 + filter[0, 1] * b2 + filter[0, 2] * b3 +
+                                           filter[1, 0] * b4 + filter[1, 1] * b5 + filter[1, 2] * b6 +
+                                           filter[2, 0] * b7 + filter[2, 1] * b8 + filter[2, 2] * b9;
+
+                        if (convulation > 255) bmpMatris[y, x] = 255;
+                        else if (convulation < 0) bmpMatris[y, x] = 0;
+                        else bmpMatris[y, x] = convulation;   
+                }
+            }
+
+            for (int y = 1; y < bmp.Height - 2; y++)
+            {
+                for (int x = 1; x < bmp.Width - 2; x++)
+                {
+                    if (bmpMatris[y, x] == 255)
+                    {
+                        bmp.SetPixel(x, y, Color.FromArgb(255, 255, 255));
+                    }
+                    else bmp.SetPixel(x, y, Color.FromArgb(0, 0, 0));
+                }
+            }
+        }
+
+        private void buttonConvulation_Click(object sender, EventArgs e)
+        {
+            if (bmp != null)
+            {
+                if (flagBitmap == false)
+                {
+                    MessageBox.Show("Please click the bitmap button first");
+                }
+                else
+                {
+                    int[,] convulationMatris = { { -1, -1, -1 }, { -1, 8, -1 }, { -1, -1, -1 } };
+                    convulationAndLaplacian(convulationMatris);
+                    pictureBox.Image = bmp;
+                    this.Refresh();
+                }
+            }
+        }
+        
+        private void buttonLaplacian_Click(object sender, EventArgs e)
+        {
+            if (bmp != null)
+            {
+                if (flagBitmap == false)
+                {
+                    MessageBox.Show("Please click the bitmap button first");
+                }
+                else
+                {
+                    int[,] laplacianMatris = { { 1, 1, 1 }, { 1, -8, 1 }, { 1, 1, 1 } };
+                    convulationAndLaplacian(laplacianMatris);
+                    pictureBox.Image = bmp;
+                    this.Refresh();
+                }
+            }
         }
     }
 }
