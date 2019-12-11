@@ -34,3 +34,4 @@ C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\obj\Deb
 C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\bin\Debug\imageOperations.exe.config
 C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\bin\Debug\imageOperations.exe
 C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\bin\Debug\imageOperations.pdb
+C:\Users\batuh\Documents\GitHub\ErosionAndDilationFilter\imageOperations\obj\Debug\imageOperations.WaitForm.resources
